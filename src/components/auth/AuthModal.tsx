@@ -1,5 +1,5 @@
 "use client";
-
+import { X } from "lucide-react";
 import React, { useState, useEffect } from "react";
 
 import { useTravel } from "@/context/TravelContext";

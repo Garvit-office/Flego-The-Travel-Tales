@@ -1,13 +1,26 @@
 export type TravelStyle =
-  | "adventure"
-  | "relaxation"
-  | "culture"
-  | "nature"
-  | "luxury"
-  | "budget";
+  | "Backpacking"
+  | "Trekking"
+  | "Cultural"
+  | "Adventure"
+  | "Luxury";
 
-export interface User {
+export const TRAVEL_STYLES: TravelStyle[] = [
+  "Backpacking",
+  "Trekking",
+  "Cultural",
+  "Adventure",
+  "Luxury",
+];
+
+export interface PublicUser {
   id: string;
   name: string;
   email: string;
 }
+export interface User {
+  id: string;
+  name: string;
+  email: string;
+  password: string;
+}git add 

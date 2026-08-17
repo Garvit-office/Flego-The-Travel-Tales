@@ -3,15 +3,15 @@
 import React, { useState } from "react";
 import { X, Plane, Sparkles } from "lucide-react";
 import { useTravel } from "@/context/TravelContext";
-import type { TravelStyle } from "@/types";
+import { TRAVEL_STYLES } from "@/types";
 
-const TRAVEL_STYLES: TravelStyle[] = [
-  "Backpacking",
-  "Trekking",
-  "Cultural",
-  "Adventure",
-  "Luxury",
-];
+
+export type TravelStyle =
+  | "Backpacking"
+  | "Trekking"
+  | "Cultural"
+  | "Adventure"
+  | "Luxury";
 
 interface FormState {
   title: string;
