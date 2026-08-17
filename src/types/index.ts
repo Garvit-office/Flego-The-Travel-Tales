@@ -24,3 +24,14 @@ export interface User {
   email: string;
   password: string;
 }
+
+export interface Trip {
+  id: string;
+  title: string;
+  destination: string;
+  startDate: string;
+  endDate: string;
+  budget: number;
+  travelers: number;
+  style: TravelStyle;
+}

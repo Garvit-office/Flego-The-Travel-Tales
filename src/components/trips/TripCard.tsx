@@ -2,7 +2,7 @@
 
 import React from "react";
 import { MapPin, Calendar, Wallet, Users, Plane, CheckCircle2 } from "lucide-react";
-import type { Trip } from "@/types";
+import type { Trip } from "@/types/index";
 import { useAuth } from "@/context/AuthContext";
 import { useTravel } from "@/context/TravelContext";
 
