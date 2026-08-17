@@ -7,7 +7,7 @@ import React, {
   useState,
   useCallback,
 } from "react";
-import type { PublicUser } from "@/types";
+import type { PublicUser } from "@/types/index";
 
 interface AuthResult {
   success: boolean;
