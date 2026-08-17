@@ -13,16 +13,17 @@ export const TRAVEL_STYLES: TravelStyle[] = [
   "Luxury",
 ];
 
-export interface PublicUser {
-  id: string;
-  name: string;
-  email: string;
-}
 export interface User {
   id: string;
   name: string;
   email: string;
   password: string;
+}
+
+export interface PublicUser {
+  id: string;
+  name: string;
+  email: string;
 }
 
 export interface Trip {
@@ -34,4 +35,7 @@ export interface Trip {
   budget: number;
   travelers: number;
   style: TravelStyle;
+  spotsLeft: number;
+  joinedUsers: string[];
+  hostId: string;
 }
