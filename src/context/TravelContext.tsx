@@ -7,7 +7,7 @@ import React, {
   useState,
   useCallback,
 } from "react";
-import type { Trip, Blog, NewTripInput } from "@/types";
+import type { Trip, Blog, NewTripInput } from "@/types/index";
 import { useAuth } from "@/context/AuthContext";
 import { useToast } from "@/context/ToastContext";
 

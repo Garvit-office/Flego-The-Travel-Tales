@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { tripRepo, ensureSeeded } from "@/lib/db";
 import { getAuthUser } from "@/lib/auth";
-import type { TravelStyle } from "@/types";
+import type { TravelStyle } from "@/types/index";
 
 // GET /api/trips?search=bali
 export async function GET(request: NextRequest) {
@@ -55,7 +55,7 @@ export async function POST(request: NextRequest) {
       description,
       spots: Number.isFinite(spotsNumber) && spotsNumber > 0 ? spotsNumber : 1,
       hostId: authUser.id,
-      host: authUser.name,
+      host: authUser.name || authUser.email,
     });
 
     return NextResponse.json(

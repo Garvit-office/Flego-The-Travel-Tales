@@ -1,10 +1,10 @@
-import jwt from "jsonwebtoken";
+import jwt, { Secret, SignOptions } from "jsonwebtoken";
 import bcrypt from "bcryptjs";
 import type { NextRequest } from "next/server";
-import type { AuthTokenPayload, User } from "@/types";
+import type { AuthTokenPayload, User } from "@/types/index";
 
-const JWT_SECRET = process.env.JWT_SECRET || "flego_secret_key";
-const JWT_EXPIRES_IN = process.env.JWT_EXPIRES_IN || "7d";
+const JWT_SECRET: Secret = process.env.JWT_SECRET || "flego_secret_key";
+const JWT_EXPIRES_IN = (process.env.JWT_EXPIRES_IN || "7d") as SignOptions["expiresIn"];
 
 export const AUTH_COOKIE_NAME = "flego_token";
 export const SALT_ROUNDS = 10;
@@ -36,8 +36,7 @@ export function comparePassword(
  * Reads the JWT from either the httpOnly cookie (browser flow) or an
  * `Authorization: Bearer <token>` header (server-to-server / mobile-client
  * flow), verifies it, and returns the decoded payload — or null if missing
- * or invalid. Route handlers use this instead of touching cookies/headers
- * directly.
+ * or invalid.
  */
 export function getAuthUser(request: NextRequest): AuthTokenPayload | null {
   const cookieToken = request.cookies.get(AUTH_COOKIE_NAME)?.value;

@@ -1,5 +1,5 @@
 import bcrypt from "bcryptjs";
-import type { User, Trip, Blog, TravelStyle } from "@/types";
+import type { User, Trip, Blog, TravelStyle } from "@/types/index";
 
 /**
  * In-memory "tables".

@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { X, Plane, Sparkles } from "lucide-react";
 import { useTravel } from "@/context/TravelContext";
-import { TRAVEL_STYLES } from "@/types";
+import { TRAVEL_STYLES } from "@/types/index";
 
 
 export type TravelStyle =
